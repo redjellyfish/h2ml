@@ -1,0 +1,10 @@
+{
+  "name": "h2ml",
+  "version": "0.0.0",
+  "description": "h2ml",
+  "main": "app.js",
+  "author": {
+    "name": "Simon",
+    "email": ""
+  }
+}
