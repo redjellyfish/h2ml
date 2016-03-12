@@ -3,8 +3,23 @@
   "version": "0.0.0",
   "description": "h2ml",
   "main": "app.js",
-  "author": {
-    "name": "Simon",
-    "email": ""
+  "keywords": [
+    "template",
+    "html",
+    "express",
+    "engine"
+  ],
+  "author": "redjellyfish <dev@redjellyfish.co.uk> (http://redjellyfish.co.uk)",
+   "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "cheerio": "^0.20.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha --harmony_default_parameters ./test/*/*.js"
   }
 }
