@@ -52,6 +52,8 @@ describe("CheerioDomHelper", function () {
         let count = nodes.length;
         dom.remove(nodes[0]);
         expect(dom.nodes().length).to.equal(count - 1);
+
+        expect(dom.isRemoved(nodes[0])).to.equal(true);
     });
 
     it("can remove identity void elements", function () {
@@ -73,6 +75,22 @@ describe("CheerioDomHelper", function () {
         }
         let expected = ["hr", "div", "p", "area", "img"];
 
+        expect(res).to.deep.equal(expected);
+    });
+
+    it("can get parent node", function () {
+        let dom = new CheerioDomHelper("<div><ul><li><p><hr></p></li></ul></div>");
+        let node = dom.nodes()[0];
+        let nodes = dom.nodes(node);
+        while ((nodes = dom.nodes(node)).length > 0) {
+            node = nodes[0];
+        }
+        let res = [];
+        while (node != null) {
+            res.push(dom.name(node));
+            node = dom.parent(node);
+        }
+        let expected = ["hr", "p", "li", "ul", "div"];
         expect(res).to.deep.equal(expected);
     });
 
