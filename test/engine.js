@@ -40,5 +40,36 @@ describe("Engine", function () {
             return expect(h2ml.render(input)).to.eventually.equal(input);
         });
 
+        it("can rebuild whole document", function () {
+            let input = `<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- test -->
+	<div id="test">hello world</div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>`;
+            return expect(h2ml.render(input)).to.eventually.equal(input);
+        });
+
+        it("works with text interpolation as element contents", function () {
+            let input = '<div id="ok">${model.message}</div>';
+            return expect(h2ml.render(input, { message: "hello world" })).to.eventually.equal('<div id="ok">hello world</div>');
+        });
+
+        it("works with text interpolation in attributes", function () {
+            let input = '<div id="${model.id}">test</div>';
+            return expect(h2ml.render(input, { id: "abcdefg" })).to.eventually.equal('<div id="abcdefg">test</div>');
+        });
     });
 });
