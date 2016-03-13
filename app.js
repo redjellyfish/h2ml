@@ -5,11 +5,12 @@ let Engine = require("./lib/engine");
 
 module.exports = {
     compile: function (html, options, model) {
-        let engine = new Engine(options);
-        return engine.compile(html, model);
+        return new Engine(options).compile(html, model);
     },
     render: function (html, model, options) {
-        let engine = new Engine(options);
-        return engine.render(html, model);
-    }
+        return new Engine(options).render(html, model);
+    },
 }
+
+
+module.exports.render("<div id='ok'>test</div>").then(console.log);

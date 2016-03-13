@@ -38,6 +38,7 @@
     <Compile Include="lib\elements\__default.js" />
     <Compile Include="lib\elements\__text.js" />
     <Compile Include="lib\engine.js" />
+    <Compile Include="lib\helpers.js" />
     <Compile Include="lib\syntaxBuilder.js" />
     <Compile Include="test\dom\cheerio-helper.js">
       <TestFramework>Mocha</TestFramework>
