@@ -12,5 +12,6 @@ module.exports = {
     },
 }
 
+let input = '<!-- test -->';
 
-module.exports.render("<div id='ok'>test</div>").then(console.log);
+module.exports.render(input).then(console.log);
