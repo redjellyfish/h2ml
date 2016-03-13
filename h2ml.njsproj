@@ -37,6 +37,7 @@
     <Compile Include="lib\elements\index.js" />
     <Compile Include="lib\elements\__comment.js" />
     <Compile Include="lib\elements\__default.js" />
+    <Compile Include="lib\elements\__directive.js" />
     <Compile Include="lib\elements\__text.js" />
     <Compile Include="lib\engine.js" />
     <Compile Include="lib\helpers.js" />
