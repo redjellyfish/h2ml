@@ -20,6 +20,6 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha --harmony_default_parameters ./test/*/*.js"
+    "test": "mocha --harmony_default_parameters --recursive ./test"
   }
 }

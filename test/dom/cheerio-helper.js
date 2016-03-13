@@ -15,7 +15,7 @@ describe("CheerioDomHelper", function () {
     it("can get node type", function () {
         let dom = new CheerioDomHelper("<!doctype html><!-- test --><meta property='test'/><div><ul><li></li></div><hr>test");
         let nodes = dom.nodes();
-        let res = nodes.map((i, n) => dom.type(n));
+        let res = nodes.map(n => dom.type(n));
         let expected = ["directive", "comment", "tag", "tag", "tag", "text"]
 
         expect(Array.prototype.slice.call(res)).to.deep.equal(expected);
@@ -40,7 +40,7 @@ describe("CheerioDomHelper", function () {
         let dom = new CheerioDomHelper("<div>hello</div><div>{<p>.</p>}</div>test");
         let nodes = dom.nodes();
 
-        let res = nodes.map((i, n) => dom.text(n));
+        let res = nodes.map(n => dom.text(n));
         let expected = ["hello", "{.}", "test"];
 
         expect(Array.prototype.slice.call(res)).to.deep.equal(expected);
@@ -59,7 +59,7 @@ describe("CheerioDomHelper", function () {
     it("can remove identity void elements", function () {
         let dom = new CheerioDomHelper("<br><hr><div></div><p></p><area/><img>");
         let nodes = dom.nodes();
-        let res = nodes.map((i, n) => dom.isVoid(n));
+        let res = nodes.map(n => dom.isVoid(n));
         let expected = [true, true, false, false, true, true]
 
         expect(Array.prototype.slice.call(res)).to.deep.equal(expected);
