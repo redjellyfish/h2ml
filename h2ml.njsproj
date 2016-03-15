@@ -34,6 +34,7 @@
     <Compile Include="app.js" />
     <Compile Include="lib\cheerioDomHelper.js" />
     <Compile Include="lib\domHelper.js" />
+    <Compile Include="lib\elements\component.js" />
     <Compile Include="lib\elements\index.js" />
     <Compile Include="lib\elements\__comment.js" />
     <Compile Include="lib\elements\__default.js" />
@@ -42,10 +43,11 @@
     <Compile Include="lib\engine.js" />
     <Compile Include="lib\helpers.js" />
     <Compile Include="lib\syntaxBuilder.js" />
-    <Compile Include="test\dom\cheerio-helper.js">
+    <Compile Include="test\component.test.js" />
+    <Compile Include="test\dom\cheerioDomHelper.test.js">
       <TestFramework>Mocha</TestFramework>
     </Compile>
-    <Compile Include="test\engine.js" />
+    <Compile Include="test\engine.test.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
